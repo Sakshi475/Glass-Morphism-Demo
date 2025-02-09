@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Paradise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <h1>Welcome to Plant Paradise</h1>
+      <p>Your go-to destination for beautiful plants and gardening tips!</p>
+      <a href="#explore" class="btn">Explore More</a>
+    </div>
+  </header>
+
+  <!-- Explore Section -->
+  <section id="explore" class="explore-section">
+    <div class="content">
+      <h2>Explore Our Plants</h2>
+      <div class="plants-gallery">
+        <div class="plant-card">
+          <img src="https://hips.hearstapps.com/hmg-prod/images/a-set-of-colorful-potted-plants-on-a-patterned-area-royalty-free-image-1716493110.jpg?crop=0.668xw:1.00xh;0.210xw,0&resize=1200:*" alt="Plant 1">
+          <h3>Succulent</h3>
+          <p>A beautiful and low-maintenance plant that thrives in dry environments.</p>
+        </div>
+        <div class="plant-card">
+          <img src="https://www.tasteofhome.com/wp-content/uploads/2020/07/Monster_thesill.jpg?fit=568,568" alt="Plant 2">
+          <h3>Fern</h3>
+          <p>Ideal for indoor spaces, providing a lush and vibrant green touch to your home.</p>
+        </div>
+        <div class="plant-card">
+          <img src="https://www.easytogrowbulbs.com/cdn/shop/articles/plumeria-for-sale.jpg?v=1557257275&width=1100" alt="Plant 3">
+          <h3>Cactus</h3>
+          <p>Perfect for dry and hot climates, and an elegant addition to any garden or decor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <br><br><br><br>
+
+  <!-- Registration Form Section (Moved to the end) -->
+  <section id="registration" class="form-section">
+    <div class="form-container">
+      <h2>Create Account</h2>
+      <form id="registration-form">
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <input type="password" id="confirm-password" placeholder="Confirm Password" required />
+        <button type="submit">Register</button>
+      </form>
+      <p id="error-message"></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Plant Paradise | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    document.getElementById("registration-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form from submitting
+
+      let username = document.getElementById("username").value;
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+      let confirmPassword = document.getElementById("confirm-password").value;
+      let errorMessage = document.getElementById("error-message");
+
+      // Basic form validation
+      if (password !== confirmPassword) {
+        errorMessage.textContent = "Passwords do not match!";
+        return;
+      }
+
+      if (username && email && password) {
+        alert("Registration Successful!");
+        document.getElementById("registration-form").reset();
+        errorMessage.textContent = ''; // Clear error message
+      } else {
+        errorMessage.textContent = "All fields are required!";
+      }
+    });
+  </script>
+</body>
+</html>
